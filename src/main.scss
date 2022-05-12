@@ -1,0 +1,132 @@
+@import "~bootstrap/scss/bootstrap";
+@import './variables';
+
+@function breakPoint($breakpoint) {
+    @return map-get($breakpoints, $breakpoint );
+}
+
+@mixin respond-above($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+        @media (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+body {
+    background-color: $light-color;
+    color: $dark-color;
+    .underHeader {
+        margin-top: 125px;
+        padding: 10px;
+    }
+    .searchDiv {
+        margin-bottom: 20px;
+    }
+    h5 {
+        margin-bottom: 0;
+    }
+}
+
+.headerBar {
+    background-color: $accent-color;
+    padding: 10px 0;
+    #titleHeader {
+        font-size: 3rem;
+        font-weight: 800;
+        color: $yellow;
+        -webkit-text-stroke: 3px $blue;
+    }
+}
+.doubleSecondEvo4 {
+    margin-bottom: 24px;
+}
+
+.col:empty {
+    display: none;
+}
+
+span.normal {
+    color: $normal;
+    margin: 0 5px;
+}
+span.fire {
+    color: $fire;
+    margin: 0 5px;
+}
+span.water {
+    color: $water;
+    margin: 0 5px;
+}
+span.grass {
+    color: $grass;
+    margin: 0 5px;
+}
+span.electric {
+    color: $electric;
+    margin: 0 5px;
+}
+span.ice {
+    color: $ice;
+    margin: 0 5px;
+}
+span.fighting {
+    color: $fighting;
+    margin: 0 5px;
+}
+span.poison {
+    color: $poison;
+    margin: 0 5px;
+}
+span.ground {
+    color: $ground;
+    margin: 0 5px;
+}
+span.flying {
+    color: $flying;
+    margin: 0 5px;
+}
+span.psychic {
+    color: $psychic;
+    margin: 0 5px;
+}
+span.bug {
+    color: $bug;
+    margin: 0 5px;
+}
+span.rock {
+    color: $rock;
+    margin: 0 5px;
+}
+span.ghost {
+    color: $ghost;
+    margin: 0 5px;
+}
+span.dragon {
+    color: $dragon;
+    margin: 0 5px;
+}
+span.dark {
+    color: $dark;
+    margin: 0 5px;
+}
+span.steel {
+    color: $steel;
+    margin: 0 5px;
+}
+span.fairy {
+    color: $fairy;
+    margin: 0 5px;
+}
+
+@include respond-above(sm) {
+    body {
+        .underHeader {
+            margin-top: 86px;
+        }
+    }
+}
+
